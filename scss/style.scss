@@ -1,0 +1,84 @@
+@import "./base/reset";
+@import "./base/variables";
+@import "./base/mixins";
+@import "./base/extends";
+
+
+/* Fondo Navbar and Footer*/
+.bg-brow {
+    background-color: brown;
+}
+
+/* Fondo Body*/
+body {
+    background-color: map-get($colores , "bk-body" );
+    color: map-get($colores , "color-body" );
+}
+
+/*Estilo Footer*/
+footer {
+    @extend .bg-brow;
+    width: 100%;
+    height: 200px;
+    margin-top: 0px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: white;
+
+    ul {
+        li {
+        list-style: none;
+
+        }
+    }
+}
+
+/* Estilo Button */
+.btn-primary {
+    background-color: rgba(56, 50, 50, 0.445);
+    border-color: $bk-button-h;
+    transition: all 0.2s ease-out;
+}
+
+/* Estilo Hover Button */
+.btn-primary:hover {
+    background-color: $bk-button-h;
+    border-color: $bk-button-h;
+    color: brown;
+    transform: scale(0.8);
+}
+
+/* Id Galeria */
+#galeria .col-lg-4 {
+    padding: 5px;
+}
+
+/* Estilo Img Galeria */
+#galeria img {
+    width: 100%;
+    height: 250px;
+}
+
+
+.anchoFooter {
+    margin-top: 30px;
+}
+
+.redes {
+    display: inline-block;
+}
+
+.bi-facebook {
+    @include redes($face)
+}
+
+.bi-instagram {
+    @include redes($insta)
+}
+
+@media (max-width: 576px) {
+    .mt-mobile {
+        margin-top: 2rem;
+    }
+}
